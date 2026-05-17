@@ -88,6 +88,15 @@ function App() {
     setCartItems(updatedCart);
   };
 
+  const placeOrder = () => {
+
+  alert("Order placed successfully! 🎉");
+
+  setCartItems([]);
+
+  setShowCart(false);
+};
+
   return (
     <div className="app-container">
 
@@ -102,6 +111,7 @@ function App() {
     decreaseQuantity={decreaseQuantity}
     removeItem={removeItem}
     setShowCart={setShowCart}
+    placeOrder={placeOrder}
   />
 )}
 

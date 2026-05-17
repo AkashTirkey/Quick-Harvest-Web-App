@@ -7,6 +7,7 @@ const Cart = ({
   decreaseQuantity,
   removeItem,
   setShowCart,
+  placeOrder,
 }) => {
   const totalItems = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -102,7 +103,9 @@ const Cart = ({
               <span>₹{cartTotal + 40}</span>
             </div>
 
-            <button className="checkout-btn">Proceed to Order Summary</button>
+            <button className="checkout-btn" onClick={placeOrder}>
+              Proceed to Order Summary
+            </button>
           </div>
         </>
       )}
