@@ -3,24 +3,53 @@ import { FaShoppingCart, FaSearch } from "react-icons/fa";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.png";
 
-const Navbar = ({ cartCount }) => {
+const Navbar = ({ cartCount, setShowCart }) => {
   return (
     <nav className="navbar">
+
+      {/* LOGO */}
+
       <div className="logo">
-        <img src={logo} alt="fresh Harvest logo" />
-      </div>
-      <div className="search-box">
-        <FaSearch className="search-icon" />
-        <input type="text" placeholder="Search groceries...." />
+        <img
+          src={logo}
+          alt="Fresh Harvest Logo"
+        />
       </div>
 
-      <div className="cart-container">
-        <div className="cart-icon">
-          <FaShoppingCart />
-          <span>{cartCount}</span>
-        </div>
-        <p>Cart</p>
+      {/* SEARCH */}
+
+      <div className="search-box">
+
+        <FaSearch className="search-icon" />
+
+        <input
+          type="text"
+          placeholder="Search groceries..."
+        />
+
       </div>
+
+      {/* CART */}
+
+      <div
+        className="cart-container"
+        onClick={() => setShowCart(true)}
+      >
+
+        <div className="cart-icon">
+
+          <FaShoppingCart />
+
+          <span>
+            {cartCount}
+          </span>
+
+        </div>
+
+        <p>Cart</p>
+
+      </div>
+
     </nav>
   );
 };

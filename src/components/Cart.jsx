@@ -6,88 +6,106 @@ const Cart = ({
   increaseQuantity,
   decreaseQuantity,
   removeItem,
+  setShowCart,
 }) => {
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
+
+  const cartTotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
 
   return (
     <section className="cart-section">
+      {/* HEADER */}
 
-      <h2>Cart Items</h2>
+      <div className="cart-header">
+        <h2>Cart Items</h2>
+
+        <button className="close-cart" onClick={() => setShowCart(false)}>
+          ✕
+        </button>
+      </div>
+
+      {/* EMPTY CART */}
 
       {cartItems.length === 0 ? (
-
-        <p className="empty-cart">
-          Your cart is empty
-        </p>
-
+        <p className="empty-cart">Your cart is empty</p>
       ) : (
+        <>
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <div className="cart-item" key={item.id}>
+                {/* LEFT */}
 
-        <div className="cart-items">
+                <div className="cart-left">
+                  <img src={item.image} alt={item.name} />
 
-          {cartItems.map((item) => (
+                  <div>
+                    <h4>{item.name}</h4>
 
-            <div
-              className="cart-item"
-              key={item.id}
-            >
+                    <p>{item.unit}</p>
 
-              <div className="cart-left">
-
-                <img
-                  src={item.image}
-                  alt={item.name}
-                />
-
-                <div>
-                  <h4>{item.name}</h4>
-                  <p>{item.unit}</p>
-                  <span>₹{item.price}</span>
+                    <span>₹{item.price}</span>
+                  </div>
                 </div>
 
-              </div>
+                {/* RIGHT */}
 
-              <div className="cart-right">
+                <div className="cart-right">
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
 
-                <div className="quantity-controls">
+                    <span>{item.quantity}</span>
 
-                  <button
-                    onClick={() =>
-                      decreaseQuantity(item.id)
-                    }
-                  >
-                    -
-                  </button>
-
-                  <span>{item.quantity}</span>
+                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  </div>
 
                   <button
-                    onClick={() =>
-                      increaseQuantity(item.id)
-                    }
+                    className="remove-btn"
+                    onClick={() => removeItem(item.id)}
                   >
-                    +
+                    Remove
                   </button>
-
                 </div>
-
-                <button
-                  className="remove-btn"
-                  onClick={() =>
-                    removeItem(item.id)
-                  }
-                >
-                  Remove
-                </button>
-
               </div>
+            ))}
+          </div>
 
+          {/* SUMMARY */}
+
+          <div className="cart-summary">
+            <div className="summary-row">
+              <span>Total Items</span>
+
+              <span>{totalItems}</span>
             </div>
 
-          ))}
+            <div className="summary-row">
+              <span>Subtotal</span>
 
-        </div>
+              <span>₹{cartTotal}</span>
+            </div>
 
+            <div className="summary-row">
+              <span>Delivery Charge</span>
+
+              <span>₹40</span>
+            </div>
+
+            <div className="summary-row total-row">
+              <span>Total Amount</span>
+
+              <span>₹{cartTotal + 40}</span>
+            </div>
+
+            <button className="checkout-btn">Proceed to Order Summary</button>
+          </div>
+        </>
       )}
-
     </section>
   );
 };

@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   // ADD TO CART
 
@@ -90,16 +91,19 @@ function App() {
   return (
     <div className="app-container">
 
-      <Navbar cartCount={cartItems.length} />
+      <Navbar cartCount={cartItems.length} setShowCart = {setShowCart} />
 
       <ProductList addToCart={addToCart} />
 
-      <Cart
-        cartItems={cartItems}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-        removeItem={removeItem}
-      />
+     {showCart && (
+  <Cart
+    cartItems={cartItems}
+    increaseQuantity={increaseQuantity}
+    decreaseQuantity={decreaseQuantity}
+    removeItem={removeItem}
+    setShowCart={setShowCart}
+  />
+)}
 
     </div>
   );
