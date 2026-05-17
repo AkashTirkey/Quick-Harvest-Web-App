@@ -16,8 +16,10 @@
 
 .search-box {
   position: relative;
+  flex: 1;
+  max-width: 600px;
   width: 100%;
-  max-width: 700px;
+  margin: 0 20px;
 }
 .search-icon {
   position: absolute;
@@ -66,4 +68,50 @@
   font-size: 0.85rem;
   margin-top: 4px;
   color: #444;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo img {
+    height: 90px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-box input {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .cart-container {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+    .search-box {
+    max-width: 350px;
+  }
+  .search-box input {
+    max-width: 300px;
+  }
+
+  .logo img {
+    height: 100px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
 }
