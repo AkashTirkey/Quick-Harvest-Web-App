@@ -79,6 +79,18 @@ const Cart = ({
           {/* SUMMARY */}
 
           <div className="cart-summary">
+            <h3 className="summary-heading">Order Summary</h3>
+            <div className="order-breakdown">
+              {cartItems.map((item) => (
+                <div className="breakdown-item" key={item.id}>
+                  <p>
+                    {item.name} × {item.quantity}
+                  </p>
+
+                  <span>₹{item.price * item.quantity}</span>
+                </div>
+              ))}
+            </div>
             <div className="summary-row">
               <span>Total Items</span>
 
@@ -104,7 +116,7 @@ const Cart = ({
             </div>
 
             <button className="checkout-btn" onClick={placeOrder}>
-              Proceed to Order Summary
+              Place Order
             </button>
           </div>
         </>
