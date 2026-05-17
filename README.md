@@ -1,52 +1,49 @@
-Quick Harvest 🌿🛒
+🌿 Quick Harvest
 
 A responsive grocery ordering web application inspired by modern quick-commerce platforms like Zepto and Blinkit.
 
-Built as a Frontend Developer Internship Assignment for Urban Harvest using React and CSS.
+Built as a Frontend Developer Internship Assignment for Urban Harvest using React + Vite + CSS.
 
-Features
-Product Listing
-Displays grocery products with:
-Product image
-Name
-Category
-Price
-Unit
-Category filter pills:
+🚀 Live Features
+🛒 Product Listing
+Displays grocery products with image, name, category, price, and unit
+Category filters:
 All
 Vegetables
 Fruits
 Dairy
 Herbs
-Out-of-stock products are visually different and cannot be added to the cart.
-Cart Functionality
+Out-of-stock items are visually disabled and cannot be added to cart
+🧺 Cart Functionality
 Add products to cart
-Increase/decrease quantity
-Remove products from cart
-Cart item count updates dynamically
-Cart opens as a responsive sidebar drawer
-Order Summary
-Displays:
-Item quantities
-Individual totals
-Subtotal
+Increase / decrease quantity
+Remove items from cart
+Dynamic cart item counter
+Responsive cart sidebar drawer
+📦 Order Summary
+Item-wise quantity breakdown
+Individual item totals
+Subtotal calculation
 Flat ₹40 delivery charge
-Final total amount
+Final payable amount
 “Place Order” button:
 Disabled when cart is empty
-Clears cart after successful order
+Clears cart on successful order
 Shows confirmation message
-Responsive Design
-Fully responsive layout for:
-Desktop
-Tablet
-Mobile devices
-Tech Stack
+📱 Responsive Design
+
+Optimized for:
+
+💻 Desktop
+📟 Tablet
+📱 Mobile
+🛠 Tech Stack
 React
-CSS3
 Vite
-React Icons
-Folder Structure
+CSS3
+React Icons 
+
+
 src/
 │
 ├── assets/
@@ -71,34 +68,36 @@ src/
 ├── App.jsx
 ├── App.css
 └── main.jsx
-Project Structure Explanation
 
-The project is divided into reusable React components to keep the application modular, scalable, and easy to maintain.
 
-Navbar handles branding, search UI, and cart access.
-ProductList manages category filtering and product rendering.
-ProductCard displays individual grocery items.
-Cart manages cart operations and order summary.
+🧠 Architecture Overview
 
-Product data is stored separately inside the data folder to maintain separation between UI and application data.
+The application is built using a modular React component structure for scalability and maintainability.
 
-Styles are organized into dedicated CSS files for better readability and maintainability.
+Navbar → Branding, search UI, cart access
+ProductList → Handles filtering + product rendering
+ProductCard → Individual product display logic
+Cart → Cart management + order summary
 
-How to Run the Project Locally
+Product data is separated inside the data folder to maintain clean UI-data separation.
+
+Styles are organized per component for better readability and maintainability.
+
+⚙️ Getting Started
 1. Clone the Repository
 git clone <your-github-repo-link>
-2. Navigate to Project Folder
+2. Move into Project Directory
 cd quick-harvest
 3. Install Dependencies
 npm install
 4. Start Development Server
 npm run dev
-Future Improvements
-Search functionality
-Toast notifications
-Backend integration
-Authentication
-Persistent cart using Local Storage
+🔮 Future Improvements
+🔍 Product search functionality
+🔔 Toast notifications
+🔐 Authentication system
+🧠 Backend integration
+💾 Persistent cart using Local Storage
+👨‍💻 Author
 
-Author
 Akash Tirkey
