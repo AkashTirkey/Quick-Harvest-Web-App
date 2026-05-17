@@ -11,7 +11,7 @@ const categories = [
     "Herbs"
 ];
 
-const ProductList = () => {
+const ProductList = ({addToCart}) => {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     const filteredProducts = 

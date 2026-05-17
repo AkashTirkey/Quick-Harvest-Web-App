@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import ProductCard from './components/ProductCard'
 import ProductList from './components/ProductList'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="app-container">
       <Navbar/>
       <ProductList/>
+      <ProductCard/>
     </div>
     </>
   )
