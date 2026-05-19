@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
@@ -41,6 +42,8 @@ function App() {
         },
       ]);
     }
+
+     toast.success(`${product.name} added to cart 🛒`);
   };
 
   // INCREASE
@@ -114,6 +117,11 @@ function App() {
     placeOrder={placeOrder}
   />
 )}
+
+ <ToastContainer
+      position="top-right"
+      autoClose={2000}
+    />
 
     </div>
   );
