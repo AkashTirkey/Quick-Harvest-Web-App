@@ -1,18 +1,103 @@
-# React + Vite
+🌿 Quick Harvest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive grocery ordering web application inspired by modern quick-commerce platforms like Zepto and Blinkit.
 
-Currently, two official plugins are available:
+Built as a Frontend Developer Internship Assignment for Urban Harvest using React + Vite + CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🚀 Live Features
+🛒 Product Listing
+Displays grocery products with image, name, category, price, and unit
+Category filters:
+All
+Vegetables
+Fruits
+Dairy
+Herbs
+Out-of-stock items are visually disabled and cannot be added to cart
+🧺 Cart Functionality
+Add products to cart
+Increase / decrease quantity
+Remove items from cart
+Dynamic cart item counter
+Responsive cart sidebar drawer
+📦 Order Summary
+Item-wise quantity breakdown
+Individual item totals
+Subtotal calculation
+Flat ₹40 delivery charge
+Final payable amount
+“Place Order” button:
+Disabled when cart is empty
+Clears cart on successful order
+Shows confirmation message
+📱 Responsive Design
 
-## React Compiler
+Optimized for:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+💻 Desktop
+📟 Tablet
+📱 Mobile
+🛠 Tech Stack
+React
+Vite
+CSS3
+React Icons 
 
-Note: This will impact Vite dev & build performances.
 
-## Expanding the ESLint configuration
+src/
+│
+├── assets/
+│   ├── products/
+│   └── fresh_harvest.png
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── ProductList.jsx
+│   ├── ProductCard.jsx
+│   └── Cart.jsx
+│
+├── data/
+│   └── product.js
+│
+├── styles/
+│   ├── Navbar.css
+│   ├── ProductList.css
+│   ├── ProductCard.css
+│   └── Cart.css
+│
+├── App.jsx
+├── App.css
+└── main.jsx
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+🧠 Architecture Overview
+
+The application is built using a modular React component structure for scalability and maintainability.
+
+Navbar → Branding, search UI, cart access
+ProductList → Handles filtering + product rendering
+ProductCard → Individual product display logic
+Cart → Cart management + order summary
+
+Product data is separated inside the data folder to maintain clean UI-data separation.
+
+Styles are organized per component for better readability and maintainability.
+
+⚙️ Getting Started
+1. Clone the Repository
+git clone <your-github-repo-link>
+2. Move into Project Directory
+cd quick-harvest
+3. Install Dependencies
+npm install
+4. Start Development Server
+npm run dev
+🔮 Future Improvements
+🔍 Product search functionality
+🔔 Toast notifications
+🔐 Authentication system
+🧠 Backend integration
+💾 Persistent cart using Local Storage
+👨‍💻 Author
+
+Akash Tirkey
